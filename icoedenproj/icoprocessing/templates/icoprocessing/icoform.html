@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+<div class="offset-3 col-md-6">
+
+    <div class="p-3 mb-2 bg-dark text-white">
+
+        <form action="#" method="POST">{% csrf_token %}
+            <div class="form-group">
+                    {% for field in form %}
+                       <strong><label>{{ field.label_tag }}</label></strong>
+                        {{ field | capfirst }}
+                        {% for error in field.errors %}
+
+                            <p class="alert alert-danger" > {{ error }} </p>
+
+                        {% endfor %}
+                    {% endfor %}
+            </div>
+            <button class="btn btn-success" type="submit">Save</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
