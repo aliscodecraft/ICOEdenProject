@@ -31,17 +31,22 @@ def process_ico_form(request):
 def process_ico_form1(request):
     if request.method == 'POST':
 
-        DATE_TIME_FORMAT = 'YYYY-MM-DD HH'
+
 
         icoform = forms.ICOForm(request.POST)
 
-        if icoform.is_valid(): #Validation de l'ensemble des champs du formulaire.
 
+        print (icoform)
+
+        if icoform.is_valid(): #Validation de l'ensemble des champs du formulaire.
             icoform.save()
 
 
-        #return render(request, 'icoprocessing/icoform.html', {'form': icoform})
-        return HttpResponseRedirect('/ico/icoform')
+            #return render(request, 'icoprocessing/icoform.html', {'form': icoform})
+            return HttpResponseRedirect('/ico/icoform')
+        else:
+            #return HttpResponseRedirect('/ico/icoform')
+            return render(request, 'icoprocessing/icoform.html', {'form': icoform})
     else:
         icoform = forms.ICOForm()
 

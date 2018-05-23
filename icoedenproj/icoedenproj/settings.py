@@ -25,7 +25,7 @@ SECRET_KEY = '8g=$p-r7i0yt2rryc_b!^ylai&1n3@#2v$@4pjsd%n6b#^@#=1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.191.129.13', 'localhost']
 
 
 # Application definition
@@ -125,6 +125,11 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
 
+
+
 #Date input formats
 
 DATE_INPUT_FORMATS = ['%d/%m/%Y']
+
+
+
